@@ -1,0 +1,6 @@
+arxiv
+unstructured[pdf]
+openai
+pydantic
+neo4j
+python-dotenv

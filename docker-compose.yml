@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  neo4j:
+    image: neo4j:5.20.0
+    container_name: researchos_neo4j
+    ports:
+      - "7474:7474" # HTTP port for the Neo4j Browser UI
+      - "7687:7687" # Bolt port for our Python scripts to connect
+    environment:
+      - NEO4J_AUTH=neo4j/researchos_password
+    volumes:
+      - ./data/neo4j:/data # Persist database data on your local machine
