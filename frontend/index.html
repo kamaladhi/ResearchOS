@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ResearchOS - GraphRAG</title>
+    <!-- Modern Premium Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <!-- Background Animation Elements -->
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <div class="app-container">
+        
+        <!-- Sidebar: Knowledge Base Manager -->
+        <aside class="sidebar glass-panel">
+            <div class="sidebar-header">
+                <h2>Research<span>OS</span></h2>
+                <p class="subtitle">Multi-Agent GraphRAG</p>
+            </div>
+            
+            <div class="ingest-section">
+                <h3>Knowledge Base</h3>
+                <p>Ingest an arXiv paper into Neo4j</p>
+                <input type="text" id="ingest-input" placeholder="e.g. Graph Neural Networks">
+                <button id="ingest-btn" class="glow-on-hover">Ingest Paper</button>
+                <div id="ingest-status" class="status-msg hidden">
+                    <div class="spinner"></div>
+                    <span id="ingest-text">Extracting Entities...</span>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <div class="tag">FastAPI</div>
+                <div class="tag">Neo4j</div>
+                <div class="tag">LangGraph</div>
+            </div>
+        </aside>
+
+        <!-- Main Window: Chat Interface -->
+        <main class="chat-area glass-panel">
+            <div class="chat-header">
+                <h3>Agentic Workflow</h3>
+                <div class="agent-status">
+                    <span class="dot"></span> System Ready
+                </div>
+            </div>
+            
+            <div class="chat-history" id="chat-history">
+                <div class="message ai-message">
+                    <div class="avatar ai-avatar">🤖</div>
+                    <div class="bubble">
+                        Hello! I am your ResearchOS AI. I have access to your Neo4j Knowledge Graph and Vector Database. 
+                        Ingest a paper on the left, and then ask me anything!
+                    </div>
+                </div>
+            </div>
+
+            <div class="input-area">
+                <input type="text" id="chat-input" placeholder="Ask a question about the papers...">
+                <button id="send-btn">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 2L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M22 2L15 22L11 13L2 9L22 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+            </div>
+        </main>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

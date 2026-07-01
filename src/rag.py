@@ -88,7 +88,7 @@ def perform_graph_rag(question: str):
 
     if not context:
         print("No relevant context found in the database.")
-        return
+        return "I'm sorry, but I couldn't find any relevant information in the Knowledge Graph to answer your question."
         
     # Step 3: Feed the context to the LLM to generate the final answer
     print("🤖 Synthesizing answer using LLM...")
@@ -108,9 +108,12 @@ def perform_graph_rag(question: str):
         messages=[{"role": "user", "content": prompt}]
     )
     
+    answer = response.choices[0].message.content
     print("\n================ FINAL ANSWER ================\n")
-    print(response.choices[0].message.content)
+    print(answer)
     print("\n==============================================")
+    
+    return answer
 
 
 if __name__ == "__main__":

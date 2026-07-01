@@ -4,3 +4,8 @@ openai
 pydantic
 neo4j
 python-dotenv
+fastapi
+uvicorn
+langchain
+langchain-openai
+langgraph
